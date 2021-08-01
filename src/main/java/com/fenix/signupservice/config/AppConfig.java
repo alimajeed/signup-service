@@ -27,10 +27,10 @@ public class AppConfig {
 
             Optional<AppUser> user = appUserRepository.findByEmail(username);
             if (!user.isPresent()) {
-                throw new BadCredentialsException("1000");
+                throw new BadCredentialsException(PropertyConfig.BAD_CREDENTIALS_CODE);
             }
             if (!bCryptPasswordEncoder.matches(password, user.get().getPassword())) {
-                throw new BadCredentialsException("1000");
+                throw new BadCredentialsException(PropertyConfig.BAD_CREDENTIALS_CODE);
             }
             return new UsernamePasswordAuthenticationToken(username, null, user.get().getAuthorities());
         };
