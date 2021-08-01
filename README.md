@@ -16,6 +16,19 @@ mvn clean package
 ##Start
 java -jar target/signupservice-0.0.1-SNAPSHOT.jar
 
+##H2 Database
+http://localhost:8080/h2-console/
+
+##Swagger Documentation
+http://localhost:8080/swagger-ui.html
+
+##Docker
+####Build
+docker build -t signup-service-image .
+
+####Run
+docker run -p 8080:8080 signup-service-image
+
 ## Sample requests
 ### Postman
 #### SignUp (POST)
@@ -42,16 +55,3 @@ curl --location --request POST 'localhost:8080/signup' \
     "password": "password"
 }'
 ```
-
-##H2 Database
-http://localhost:8080/h2-console/
-
-##Swagger Documentation
-http://localhost:8080/swagger-ui.html
-
-##Docker
-####Build
-docker build -t signup-service-image .
-
-####Run
-docker run -p 8080:8080 signup-service-image
