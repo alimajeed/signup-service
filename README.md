@@ -53,5 +53,5 @@ http://localhost:8080/swagger-ui.html
 ####Build
 docker build -t signup-service-image .
 
-####RUN
+####Run
 docker run -p 8080:8080 signup-service-image
