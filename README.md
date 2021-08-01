@@ -33,14 +33,7 @@ localhost:8080/users/admin@live.com
 
 ### CURL
 ```
-curl --location --request POST 'localhost:8080/signup' \
---header 'Content-Type: application/json' \
---data-raw '{
-    "firstName": "admin",
-    "lastName": "admin",
-    "email": "admin@admin.com",
-    "password": "password"
-}'
+curl -d "{\"firstName\": \"admin\",\"lastName\": \"admin\", \"email\":\"admin@admin.com\", \"password\":\"value2\"}" -H "Content-Type:application/json" -X POST http://localhost:8080/signup/
 ```
 
 ## H2 Database
